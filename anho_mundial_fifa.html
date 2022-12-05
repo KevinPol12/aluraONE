@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF -8" />
+  <h1>Año Mundiales desde 1930</h1>
+</head>
+
+<body></body>
+
+<script>
+  function breakLines(amount) {
+    document.write("<br>");
+  }
+
+  function print(phrase) {
+    document.write(phrase);
+    breakLines();
+  }
+
+var anhoMundial = 1930;
+var cantMundCalc = 1;
+var anhoActual;
+
+alert("Hubo un mundial de la FIFA en el año "+ anhoMundial)
+cantMundCalc = parseInt(prompt("Cuantos años de mundiales quiere calcular despues del mundial de "+
+anhoMundial+", favor ingrese un numero:" ));
+
+
+for (var i = 0; i < cantMundCalc; i++){
+    let anhoMundialNew = anhoMundial + 4
+
+    print("Despues del mundial de "+ anhoMundial+", el siguiente mundial fue el año "
+    +anhoMundialNew+".");
+
+    anhoMundial=anhoMundialNew
+
+    breakLines();
+
+}
+
+print("Pero mejor listemos todos los años de mundiales que siguen hasta el año actual: <br>");
+anhoActual=parseInt(prompt("Cual es el año actual? Favor ingrese el año: "));
+
+while (anhoMundial < anhoActual){
+    anhoMundial += 4
+    print("<big>"+"Mundial del "+anhoMundial+"</big>");
+}
+print("<br>El proximo mundial se jugara hasta el año " + (anhoMundial+4));
+
+
+
+</script>
