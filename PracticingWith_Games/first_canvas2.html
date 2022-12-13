@@ -1,0 +1,44 @@
+<head>
+    <meta charset="UTF -8">
+
+</head>
+<body></body>
+
+
+<canvas width="600" height="400"> <!--first canvas for syntax reference-->
+   
+
+    
+</canvas>
+<a href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D"><br>link for more info</a>
+
+<script>
+
+    function dibujarCuadradoVerde(x,y){
+        var pantalla = document.querySelector("canvas"); //declarando la variable pantalla y relacionandola con el tag "canvas" de html
+        var pincel = pantalla.getContext("2d");          //asociando una nueva variable a la informacion que logra obtener "pantalla" con la relacion prefiamente declarada, siendo usada como un puente
+
+        
+        pincel.fillStyle = "green"
+        pincel.fillRect(x,y,50,50);
+
+        pincel.strokeStyle="black";
+        pincel.strokeRect(x,y,50,50)
+
+    }
+
+    dibujarCuadradoVerde(0,0);
+    dibujarCuadradoVerde(50,0);
+    dibujarCuadradoVerde(100,0);
+    
+    dibujarCuadradoVerde(0,50);
+    dibujarCuadradoVerde(50,50);
+    dibujarCuadradoVerde(100,50);
+    
+    
+
+
+   
+    
+    
+</script>
