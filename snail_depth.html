@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+
+<meta charset="UTF -8">
+
+<h1>Caracol en un hoyo profundo</h1>
+
+<script>
+
+var avanceDia = 7
+var retrocesoDia= 2 
+var depth= 60;
+var conteoDias= 0;
+var missingDepth=depth;
+
+document.write("<h3>"+"El gusano esta a una profundidad de "+depth+" pies, y necesita salir de ahi, hacia la superficie. Mientras cada dia el gusano puede avanzar "+avanceDia+
+ " pies por dia, el regresa "+retrocesoDia+" pies por dia."+"</h3>")
+document.write("<br><br>")
+document.write("<big>"+"¿Cuantos dias le tomara al gusano para salir de esa profundidad(\""+depth+" pies\")?<br><br><br>"+"</big>")
+
+
+while (missingDepth>0){
+    conteoDias += 1
+    missingDepth = missingDepth - avanceDia
+        if(missingDepth<=0 ){
+            document.write("Al dia "+conteoDias+" el gusano finalmente logro salir del hoyo de "+depth+" pies de profundidad.<br><br>")
+        }
+        else{
+            document.write("El gusano avanzo " + avanceDia+ " pies, llegando hasta "+missingDepth+" pies faltantes hacia la superficie, pero ")
+            missingDepth += retrocesoDia
+            document.write("regreso "+retrocesoDia+" pies, quedandose en "+missingDepth+" pies de la superficie el "+ conteoDias+" dia del viaje.<br><br>")
+        }
+
+}
+
+
+
+</script>
