@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF -8">
+    
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+
+<script>
+
+    var pantalla = document.querySelector("canvas")//This passes the html tag info into a variable in JS, then we can use it to get the info into another variable
+    var pincel = pantalla.getContext("2d"); //The other variable here is pincel, that allows to pass information back to the html canvas
+
+    pincel.fillStyle = "grey";
+    pincel.fillRect(0,0,600,400);
+
+    var color = ["blue","red","green"]
+    var indexColor = 0
+
+    function exibirAlerta(event){//The parameter "evento" is not required but to show the info in the console we define it to call like to be shown on screen (info shown such as click coordinates and more)
+        var x = event.pageX - pantalla.offsetLeft;
+        var y = event.pageY - pantalla.offsetTop;
+
+    
+        console.log(event);
+        alert(x+","+y)
+    }//Fin funcion exibirAlerta
+
+
+    function dibujarCirculo(event){
+        var x = event.pageX - pantalla.offsetLeft;
+        var y = event.pageY - pantalla.offsetTop;
+
+            pincel.fillStyle = color[indexColor];
+            pincel.beginPath();
+            pincel.arc(x,y,10,0,2*3.14);
+            pincel.fill();
+
+    
+        console.log(x+","+y);
+    }//Fin funcion dibujarCirculo
+
+    function alterarColor(){
+        indexColor++;
+        if (indexColor >=color.length){
+            indexColor = 0
+            
+
+        }
+       
+        return false;
+
+    }//Fin alterarColor
+
+    pantalla.onclick = dibujarCirculo; //it is not requiered to use the parenthesis of the declared function here since we want it to execute on the "click" event rather than the loadup
+    pantalla.oncontextmenu = alterarColor;
+
+</script>
+
