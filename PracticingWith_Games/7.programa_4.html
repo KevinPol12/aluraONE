@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF -8">
+    <title>Programa 4</title>
+    
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+
+<script>
+
+    var pantalla = document.querySelector("canvas")//This passes the html tag info into a variable in JS, then we can use it to get the info into another variable
+    var pincel = pantalla.getContext("2d"); //The other variable here is pincel, that allows to pass information back to the html canvas
+
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);
+
+    function disenharCircunferencia(x,y,radio){
+
+        pincel.fillStyle = "blue";
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+
+    }
+
+    var x = 0;
+
+    function limpiarpantalla(){
+
+        pincel.clearRect(0,0,600,400);
+        disenharCircunferencia(x,20, 10)
+        x++;
+
+    }
+
+    setInterval(limpiarpantalla,50)
+
+    
+
+</script>
