@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF -8">
+    <title>Programa 4 - Shooting the target</title>
+    
+</head>
+
+<body>
+    <canvas width="600" height="400"></canvas>
+</body>
+
+<script>
+
+    var pantalla = document.querySelector("canvas")//This passes the html tag info into a variable in JS, then we can use it to get the info into another variable
+    var pincel = pantalla.getContext("2d"); //The other variable here is pincel, that allows to pass information back to the html canvas
+
+    pincel.fillStyle = "lightgrey";
+    pincel.fillRect(0,0,600,400);
+
+    function disenharCircunferencia(x,y,radio, color){
+
+        pincel.fillStyle = color;
+        pincel.beginPath();
+        pincel.arc(x,y,radio,0,2*Math.PI);
+        pincel.fill();
+
+    }
+
+    var x = 0;
+    var radio = 10;
+    var xAleatorio= 0;
+    var yAleatorio= 0;
+
+    function limpiarpantalla(){
+        pincel.clearRect(0,0,600,400);
+
+    }
+
+
+    function disenharObjetivo(x,y){
+        
+        disenharCircunferencia(x,y, radio +radio *2, "red");
+        disenharCircunferencia(x,y, radio + radio, "white");
+        disenharCircunferencia(x,y, radio, "red");
+
+    }
+
+    function sorteoPosicion(maximo){
+        let numero = 0
+        numero = Math.floor(Math.random()*maximo+1);
+        return numero;
+
+    }
+
+
+    function actualizarPantalla(){
+        
+        limpiarpantalla();
+        this.xAleatorio = sorteoPosicion(600);
+        this.yAleatorio = sorteoPosicion(400);
+        disenharObjetivo(xAleatorio,yAleatorio);
+
+
+    }
+    
+
+     setInterval(actualizarPantalla,1000);   
+
+
+    function disparar(event){
+
+        let disparoX = event.pageX - pantalla.offsetLeft;
+        let disparoY = event.pageY - pantalla.offsetTop;
+
+        let inicialX= xAleatorio - radio;
+        let finalX= xAleatorio + radio;
+
+        let inicialY= yAleatorio - radio;
+        let finalY= yAleatorio + radio;
+
+     
+        
+       
+        if (disparoX >= inicialX && disparoX <= finalX){
+        
+            if (disparoY <= finalY && disparoY >= inicialY){
+                alert("Usted acerto")
+                console.log("Usted acerto")
+            }
+            
+        }
+
+        console.log("Fallo el disparo")
+    }
+    
+
+    pantalla.onclick = disparar;
+
+
+
+
+    
+
+</script>
