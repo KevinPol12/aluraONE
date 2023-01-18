@@ -1,10 +1,10 @@
 
 body{
-    background: #cccccc;
 }
 
-h1, p{
-    text-align: center;
+.tituloPrincipal{
+    font-size: 40px;
+    padding: 0 0 0 30px;
 }
 
 #banner{
@@ -12,8 +12,42 @@ h1, p{
     
 }
 
-li{
-    display: block;
-    background: #000000;
-    color: #FFFFFF;
+.principal{
+    width: 940px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #cccccc;
+    text-align: center;
+}
+
+em strong{
+    color: red;
+}
+
+.diferenciales{
+    width: 940px;
+    padding: 30px;
+    margin: 0 auto;
+
+}
+
+h2{
+    text-align: center;
+}
+
+ul{
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10% 0 0;
+    width: 30%;
+    
+
+}
+
+.items{
+    font-style: italic;
+}
+
+.imagenDiferenciales{
+    width: 50%;
 }
