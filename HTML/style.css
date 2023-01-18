@@ -1,0 +1,19 @@
+
+body{
+    background: #cccccc;
+}
+
+h1, p{
+    text-align: center;
+}
+
+#banner{
+    width: 100%;
+    
+}
+
+li{
+    display: block;
+    background: #000000;
+    color: #FFFFFF;
+}
