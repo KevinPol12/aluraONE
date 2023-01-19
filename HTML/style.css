@@ -1,53 +1,99 @@
-
 body{
 }
 
-.tituloPrincipal{
-    font-size: 40px;
-    padding: 0 0 0 30px;
-}
-
-#banner{
-    width: 100%;
-    
-}
-
-.principal{
+.caja{
     width: 940px;
     margin: 0 auto;
+    position: relative;
+}
+
+header{
+    background-color: #BBBBBB;
     padding: 20px;
-    background: #cccccc;
-    text-align: center;
 }
 
-em strong{
-    color: red;
+nav{
+    position: absolute;
+    top: 50%;
+    right: 0;
 }
 
-.diferenciales{
+
+nav li{
+    display: inline;
+    margin: 0 0 0 15px;
+}
+
+nav a{
+    text-transform: uppercase;
+    color: #000000;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+nav a:hover{
+    color: gold;
+    text-decoration: underline;
+    font-size: 1.1em;
+}
+
+
+.productos{
     width: 940px;
-    padding: 30px;
     margin: 0 auto;
-
+    padding: 50px;
 }
 
-h2{
-    text-align: center;
-}
-
-ul{
+.productos li{
     display: inline-block;
-    vertical-align: top;
-    margin: 0 10% 0 0;
+    text-align: center;
     width: 30%;
+    vertical-align: top;
+    margin: 0 1.5%;
+    padding: 30px 20px;
+    box-sizing: border-box;
+    border: 2px solid #000000;
+    border-radius: 5px;
+}
+
+.productos li:hover{
+    border-color: gold;
+        
+}
+
+.productos li:hover h2{
+    font-size: 33px;
+}
+
+.productos li:active{
+    border-color: green;
+}
+
+.productos h2{
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.producto-descripcion{
+    font-size: 18px;
+
+}
+
+.producto-precio{
+    font-size: 20px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+footer{
+    text-align: center;
+    background: url(imagenes/bg.jpg);
+    padding: 40px;
+}
+
+.copyright{
+    color: #CCCCCC;
+    font-size: 13px;
+    margin: 20px;
     
-
-}
-
-.items{
-    font-style: italic;
-}
-
-.imagenDiferenciales{
-    width: 50%;
 }
