@@ -5,8 +5,8 @@ public class TestGerente {
     public static void main(String[] args) {
         
         Gerente kevin = new Gerente("Kevin","9962233333",2000);
-        Funcionario wilmer = new Funcionario("Wilmer","885858585",2500);
-        SumaBonificaciones suma = new SumaBonificaciones();
+        Contador wilmer = new Contador("Wilmer","885858585",2500);
+        ControlBonificacion suma = new ControlBonificacion();
         
         
         System.out.println("Bonificacion Wilmer: ");

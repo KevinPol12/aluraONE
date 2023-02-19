@@ -3,7 +3,7 @@ public class testFuncionario {
 
     public static void main(String[] args) {
         
-        Funcionario diego = new Funcionario("Diego","444556665",2000);
+        Contador diego = new Contador("Diego","444556665",2000);
         
     
         System.out.println(diego.getSalario());

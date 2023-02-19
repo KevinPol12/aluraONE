@@ -1,9 +1,11 @@
 
-public class Cuenta {
+public abstract class Cuenta {
 
-    private double saldo;
+    protected double saldo;
     private int agencia, numero;
-    public Cliente titular;
+    private Cliente titular = new Cliente();
+    
+    private static int total;
     
     public Cuenta(double saldo, int agencia, int numero){
         this.saldo=saldo;
@@ -16,8 +18,10 @@ public class Cuenta {
       return saldo;
     }
     
-    public void setDeposit(double depo){
-        this.saldo += depo;
+    public abstract void setDeposit(double depo);
+    
+    public void saca(double cantidad){
+        this.saldo-=cantidad;
     }
     
     public int getAgencia(){
@@ -30,11 +34,14 @@ public class Cuenta {
 
     public boolean transfer(double amount, Cuenta cuenta){
         
+        
         if(this.saldo >= amount){
-            this.saldo -= amount;
+            this.saca(amount);
             cuenta.setDeposit(amount);
             System.out.printf("The transfer of %.1f%s%n",amount,
                     " was successful.");
+//            System.out.printf("There is now a deduction of %.1f%s%n",
+//                    tFee," dollars.");
             return true;
         }else{
             System.out.println("Transfer was not successful due"
@@ -43,9 +50,7 @@ public class Cuenta {
         }
     }//End boolean tranfer
     
-    public void getTitular(){
-        
-    }
+
     
 
     

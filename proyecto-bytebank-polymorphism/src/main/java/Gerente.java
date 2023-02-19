@@ -1,21 +1,25 @@
 
-public class Gerente extends Funcionario {
+public class Gerente extends Funcionario implements Autenticable {
+    
+    public AutenticacionUtil util ;
     
     public Gerente(String nombre,String documento,double salario){
         super(nombre,documento,salario);        
+        util = new AutenticacionUtil();
     }
 
-    private String clave;
-
+    @Override
     public void setClave(String clave){
-        this.clave=clave;
+        util.setClaveUtil(clave);
     }
     
-    public boolean autenticar(String clave){
-        return this.clave == clave;
+    @Override
+    public boolean iniciarSesion(String clave){
+        return util.AutenticaUtil(clave);
         
     }
     
+    @Override
     public double getBonificacion(){
         return super.getSalario();
             

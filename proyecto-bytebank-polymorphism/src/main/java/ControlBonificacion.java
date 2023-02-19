@@ -1,4 +1,4 @@
-      public class SumaBonificaciones{
+      public class ControlBonificacion{
             
             private double sumaSalarios;
             
