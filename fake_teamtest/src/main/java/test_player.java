@@ -29,6 +29,8 @@ public class test_player {
         goals.GoalsCount(midFielder1);
         goals.GoalsCount(striker1);
         
+        System.out.println(!defense1.getName().matches("W"));
+        
         
         
     }//End main
