@@ -2,14 +2,16 @@ package com.alura;
 
 import com.alura.model.Curso;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
 
-public class Clase4 {
+public class Clase9 {
     
     public static void main(String[] args) {
         
-        Curso curso1 = new Curso("java",30);
-        Curso curso2 = new Curso("Quimica",10);
-        Curso curso3 = new Curso("Fisica",20);
+        Curso curso1 = new Curso("Historia",30);
+        Curso curso2 = new Curso("Algebra",10);
+        Curso curso3 = new Curso("Aritmetica",20);
         Curso curso4 = new Curso("Geometria",50);
      
         
@@ -21,7 +23,10 @@ public class Clase4 {
         cursos.add(curso4);
         
         System.out.println(cursos);
-      
+        
+        Collections.sort(cursos,Comparator.comparing(Curso:: getNombre).reversed());
+        
+        System.out.println(cursos);
         
 
     }//End main
