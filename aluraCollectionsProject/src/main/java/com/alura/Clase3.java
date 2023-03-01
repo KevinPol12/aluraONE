@@ -23,27 +23,27 @@ public class Clase3 {
         cursos.add(curso3);
         cursos.add(curso4);
         
-//        System.out.println(cursos);
-//        
-//        System.out.println();
-//        
-//        Collections.sort(cursos,Collections.reverseOrder());//sort
-//        
-//        System.out.println(cursos);
-//        
-//        Collections.sort(cursos); //sort
-//        
-//        System.out.println(cursos);
-        
-//        cursos.sort(Comparator.naturalOrder());
-//        System.out.println(cursos);
-//        
-//        cursos.sort(Comparator.reverseOrder());
-//        System.out.println(cursos);
+      System.out.println(cursos);
+      
+      System.out.println();
+      
+      Collections.sort(cursos,Collections.reverseOrder());//sort
+      
+      System.out.println(cursos);
+      
+      Collections.sort(cursos); //sort
+      
+      System.out.println(cursos);
+    
+      cursos.sort(Comparator.naturalOrder());
+      System.out.println(cursos);
+      
+      cursos.sort(Comparator.reverseOrder());
+      System.out.println(cursos);
 
-        List<String> newCursos = cursos.stream().sorted().collect(Collectors.toList());
-          
-        System.out.println(newCursos);
+      List<String> newCursos = cursos.stream().sorted().collect(Collectors.toList());
+        
+      System.out.println(newCursos);
         
 
     }//End main
